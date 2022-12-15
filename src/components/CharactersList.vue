@@ -1,45 +1,44 @@
 <script>
+
 import SingleCharacter from './SingleCharacter.vue';
 
 export default {
     components: { SingleCharacter },
     props: {
-        characters: Object
-    }
+        characters: Object,
+    },
 }
 </script>
 
 <template>
-    <div class="container">
-        <div class="characters-counter">
-            {{ `Found ${characters.length} characters` }}
-        </div>
-
-        <section class="characters">
-            <SingleCharacter v-for="character in characters" :key="character.id" :character="character" />
-        </section>
+    <div class="characters-counter">
+        {{ `Found ${characters.length} characters` }}
     </div>
+
+    <section class="characters">
+        <SingleCharacter v-for="character in characters" :key="character.id" :character="character" />
+    </section>
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/partials/partials.scss' as *;
 
-.container {
-    padding: 2rem;
+option {
+    color: black;
+}
 
-    .characters-counter {
-        background-color: black;
-        height: 3rem;
-        line-height: 3rem;
-        vertical-align: middle;
-        padding: 0 1rem;
-    }
+.characters-counter {
+    background-color: black;
+    height: 3rem;
+    line-height: 3rem;
+    vertical-align: middle;
+    padding: 0 1rem;
+}
 
-    .characters {
-        margin: 2rem;
-        display: flex;
-        gap: 2rem 1rem;
-        flex-wrap: wrap;
-    }
+.characters {
+    margin: 2rem;
+    display: flex;
+    gap: 2rem 1rem;
+    flex-wrap: wrap;
 }
 </style>

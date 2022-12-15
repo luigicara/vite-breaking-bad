@@ -9,7 +9,7 @@ export default {
 <template>
     <div class="card">
         <img :src="character.image" alt="">
-        <div class="name">{{ character.name }}</div>
+        <div class="name" selected>{{ character.name }}</div>
         <div class="species">{{ character.species }}</div>
         <div class="status">{{ character.status }}</div>
     </div>
