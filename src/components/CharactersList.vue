@@ -1,22 +1,24 @@
 <script>
-
+import { store } from '../scripts/store'
 import SingleCharacter from './SingleCharacter.vue';
 
 export default {
     components: { SingleCharacter },
-    props: {
-        characters: Object,
-    },
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
 <template>
     <div class="characters-counter">
-        {{ `Found ${characters.length} characters` }}
+        {{ `Found ${store.characterList.length} characters` }}
     </div>
 
     <section class="characters">
-        <SingleCharacter v-for="character in characters" :key="character.id" :character="character" />
+        <SingleCharacter v-for="character in store.characterList" :key="character.id" :character="character" />
     </section>
 </template>
 

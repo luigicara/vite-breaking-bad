@@ -42,7 +42,7 @@ export default {
   <main>
     <div class="container">
       <Search @performSearch="getCharacters" />
-      <CharactersList :characters="store.characterList" />
+      <CharactersList />
     </div>
   </main>
 </template>
